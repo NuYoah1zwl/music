@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>精美音乐播放器</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- 浮动音符背景 -->
+    <div class="floating-notes" id="floatingNotes"></div>
+
+    <div class="music-player">
+      <!-- 音乐库信息 -->
+      <div class="music-info">
+        <h3>🎵 音乐播放器</h3>
+        <div class="file-count" id="fileCount">正在加载音乐库...</div>
+      </div>
+
+      <!-- 专辑封面 -->
+      <div class="album-art" id="albumArt">
+        <div class="emoji"></div>
+      </div>
+
+      <!-- 歌曲信息 -->
+      <div class="song-info">
+        <div class="song-title" id="songTitle">请等待音乐库加载</div>
+        <div class="song-artist" id="songArtist">未知艺术家</div>
+      </div>
+
+      <!-- 进度条 -->
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar">
+          <div class="progress" id="progress"></div>
+        </div>
+        <div class="time-info">
+          <span id="currentTime">0:00</span>
+          <span id="totalTime">0:00</span>
+        </div>
+      </div>
+
+      <!-- 播放控制 -->
+      <div class="controls">
+        <button class="control-btn ripple" id="prevBtn" disabled title="上一首">
+          ⏮️
+        </button>
+        <button
+          class="control-btn play-btn ripple"
+          id="playBtn"
+          disabled
+          title="播放/暂停"
+        >
+          ▶️
+        </button>
+        <button class="control-btn ripple" id="nextBtn" disabled title="下一首">
+          ⏭️
+        </button>
+      </div>
+
+      <!-- 播放模式 -->
+      <div class="mode-controls">
+        <button
+          class="mode-btn active ripple"
+          id="sequentialBtn"
+          title="顺序播放"
+        >
+          🔁
+        </button>
+        <button class="mode-btn ripple" id="randomBtn" title="随机播放">
+          🔀
+        </button>
+        <button class="mode-btn ripple" id="repeatBtn" title="单曲循环">
+          🔂
+        </button>
+      </div>
+
+      <!-- 音量控制 -->
+      <div class="volume-container">
+        <span class="volume-icon">🔊</span>
+        <input
+          type="range"
+          class="volume-slider"
+          id="volumeSlider"
+          min="0"
+          max="100"
+          value="50"
+        />
+        <span class="volume-value" id="volumeValue">50%</span>
+      </div>
+
+      <!-- 定时器 -->
+      <div class="timer-container">
+        <span class="timer-label">⏰ 定时关闭:</span>
+        <input
+          type="number"
+          class="timer-input"
+          id="timerMinutes"
+          placeholder="分钟"
+          min="1"
+          max="999"
+        />
+        <button class="timer-btn ripple" id="startTimerBtn">开始</button>
+        <button class="timer-btn ripple" id="cancelTimerBtn">取消</button>
+        <span class="timer-status" id="timerStatus"></span>
+      </div>
+
+      <!-- 搜索功能 -->
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input"
+          id="searchInput"
+          placeholder="🔍 搜索歌曲或艺术家..."
+        />
+        <button class="search-clear" id="searchClear">✕</button>
+      </div>
+
+      <!-- 播放列表 -->
+      <div class="playlist" id="playlist">
+        <div class="loading">正在加载音乐库...</div>
+      </div>
+
+      <!-- 音频元素 -->
+      <audio id="audioPlayer" autoplay preload="metadata"></audio>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
