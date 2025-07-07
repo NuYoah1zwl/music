@@ -289,6 +289,7 @@ class MusicPlayer {
 
   handleAudioError(e) {
     console.error("音频播放错误:", e);
+    /*
     this.showMessage(
       `播放失败: ${this.songs[this.currentSongIndex]?.title || "未知歌曲"}`
     );
@@ -297,6 +298,7 @@ class MusicPlayer {
     setTimeout(() => {
       this.nextSong();
     }, 2000);
+    */
   }
 
   getRandomEmoji() {
